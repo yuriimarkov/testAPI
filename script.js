@@ -47,7 +47,8 @@ const userList = document.querySelector('.userList');
 async function viewUsers(data) {
   const body = document.querySelector('.allUsersContainer');
 
-  data.map(item => {
+  const filterData = [...new Set(data)];
+  filterData.map(item => {
     const listItem = document.createElement('li');
     listItem.classList.add('listItem');
     listItem.innerHTML = item;
